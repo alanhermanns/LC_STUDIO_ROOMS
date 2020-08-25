@@ -1,0 +1,51 @@
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.main{
+    height: 100vh;
+    width: 100vw;
+}
+img{
+    position: absolute;
+    size: 30%;
+    z-index: -1;
+}
+.electricPianoStudios{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 290px;
+    left: -10px;
+    top: 625px;
+}
+.southBlock{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 230px;
+    left: 5px;
+    top: 675px;
+}
+.northBlock{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 230px;
+    left: 215px;
+    top: 675px;
+}
+.groupStudios{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    left: 505px;
+    top: 735px;
+}
