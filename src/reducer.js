@@ -1,19 +1,27 @@
-// export const initialState = {
-//     roomTimes: [],
-//     loading: true
-//   };
+export const initialState = {
+    takenTimes: [{
+        time: '',
+        roomName : ''
+    }],
+    usersTimes : {
+        time: '',
+        roomName : ''
+    }
+  };
   
-//   export const UPDATE_GLOBAL_ROOMTIMES = 'UPDATE_GLOBAL';
-//   export const RETRIEVE_GLOBAL_ROOMTIMES = 'RETRIEVE_GLOBAL_ROOMTIMES';
+  export const UPDATE_ALL_TAKEN_TIMES = 'UPDATE_ALL_TAKEN_TIMES';
+  export const RETRIEVE_ALL_TAKEN_TIMES = 'RETRIEVE_ALL_TAKEN_TIMES';
   
-//   export default function reducer(state, action) {
-//     switch(action.type){
-//       case UPDATE_GLOBAL_ROOMTIMES:
-//         return { ...state, points: [...state.roomTimes, action.payload] };
-//       case RETRIEVE_GLOBAL_ROOMTIMES:
-//         return { ...state, points: action.payload, loading: false };
-//       default: 
-//         return state;
-//     }
+  export default function reducer(state, action) {
+    switch(action.type){
+      case 'UPDATE_ALL_TAKEN_TIMES':
+        return { ...state, takenTimes : action.payload};
+        case 'UPDATE_USER_TAKEN_TIMES':
+        return { ...state, usersTimes : action.payload};
+    //   case RETRIEVE_ALL_TAKEN_TIMES:
+    //     return { ...state, ...action.payload};
+      default:
+        return state;
+    }
     
-//   }
+  }
