@@ -3,10 +3,10 @@ export const initialState = {
         time: '',
         roomName : ''
     }],
-    usersTimes : {
+    usersTimes : [{
         time: '',
         roomName : ''
-    }
+    }]
   };
   
   export const UPDATE_ALL_TAKEN_TIMES = 'UPDATE_ALL_TAKEN_TIMES';
@@ -16,9 +16,9 @@ export const initialState = {
     switch(action.type){
       case 'UPDATE_ALL_TAKEN_TIMES':
         return { ...state, takenTimes : action.payload};
-        case 'UPDATE_USER_TAKEN_TIMES':
+      case 'UPDATE_USER_TAKEN_TIMES':
         return { ...state, usersTimes : action.payload};
-    //   case RETRIEVE_ALL_TAKEN_TIMES:
+    //   case LOGGED_IN:
     //     return { ...state, ...action.payload};
       default:
         return state;

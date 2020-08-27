@@ -4,6 +4,7 @@ import logo from '../assets/logo_1.jpg'
 // import { loginWithProvider } from '../firebase/firebase';
 import ButtonStyles from '../components/Button.css';
 import Styles from './Login.css';
+import {useEmitEvent} from 'react-socket-io-hooks';
 
 
 
@@ -11,12 +12,20 @@ const Login = () => {
 //   const user = useUser();
   const history = useHistory();
   const [email, setEmail]=useState('@lclark.edu');
+  const emit = useEmitEvent('LOGIN_USER');
 //   useEffect(() => {
 //     if(user) history.replace('/main');
 //   }, [user]);
 
   const handleClick = () => {
-    // loginWithProvider();
+    emit({
+      payload : {
+        email : 'dog@lclark.edu',
+        vocalStudent: false,
+        theoryStudent: false,
+        percussionStudent: false,
+      }
+    })
   };
 
   return (
