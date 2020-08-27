@@ -9,7 +9,6 @@ import { SocketProvider } from 'react-socket-io-hooks';
 
 export default function App() {
   return (
-    <>
     <SocketProvider uri="http://localhost:8080"
     reducer={reducer}
     initialState={{
@@ -17,10 +16,11 @@ export default function App() {
           time: '',
           roomName : ''
       }],
-      usersTimes : {
+      usersTimes : [{
           time: '',
           roomName : ''
-      }
+      }],
+      user: {}
     }}>
       <BrowserRouter>
         <Switch>
@@ -30,7 +30,6 @@ export default function App() {
         </Switch>
       </BrowserRouter>
     </SocketProvider>
-  </>
   )
 }
   

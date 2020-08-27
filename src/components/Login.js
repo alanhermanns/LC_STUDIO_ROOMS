@@ -4,28 +4,31 @@ import logo from '../assets/logo_1.jpg'
 // import { loginWithProvider } from '../firebase/firebase';
 import ButtonStyles from '../components/Button.css';
 import Styles from './Login.css';
-import {useEmitEvent} from 'react-socket-io-hooks';
+import {useEmitEvent, useSocketState} from 'react-socket-io-hooks';
 
 
 
-const Login = () => {
+const Login = (props) => {
 //   const user = useUser();
   const history = useHistory();
   const [email, setEmail]=useState('@lclark.edu');
   const emit = useEmitEvent('LOGIN_USER');
-//   useEffect(() => {
-//     if(user) history.replace('/main');
-//   }, [user]);
-
-  const handleClick = () => {
-    emit({
-      payload : {
-        email : 'dog@lclark.edu',
-        vocalStudent: false,
-        theoryStudent: false,
-        percussionStudent: false,
-      }
-    })
+  const socketState = useSocketState();
+  //   useEffect(() => {
+    //     if(user) history.replace('/main');
+    //   }, [user]);
+    
+    const handleClick = () => {
+      emit({
+        payload : {
+          email : 'dog@lclark.edu',
+          vocalStudent: false,
+          theoryStudent: false,
+          percussionStudent: false,
+        }
+      })
+      console.log(socketState);
+      history.push('/main')
   };
 
   return (

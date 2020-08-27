@@ -4,13 +4,13 @@ import Styles from '../components/Calendar.css';
 import { useSocketState, useEmitEvent } from 'react-socket-io-hooks';
 
 
-const Calendar = () => {
+const Calendar = (props) => {
   //   const user = useUser();
   const emit = useEmitEvent('NEW_TIME');
 
   const [room, setRoom] = useState('')  
-  const takenTimes = useSocketState();
-  console.log(takenTimes);
+  const state = useSocketState();
+  console.log(state);
 
   useEffect(() => {
     setRoom(localStorage.getItem('room name'));

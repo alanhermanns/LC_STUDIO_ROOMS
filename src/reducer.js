@@ -6,11 +6,12 @@ export const initialState = {
     usersTimes : [{
         time: '',
         roomName : ''
-    }]
+    }],
+    user : '',
   };
   
   export const UPDATE_ALL_TAKEN_TIMES = 'UPDATE_ALL_TAKEN_TIMES';
-  export const RETRIEVE_ALL_TAKEN_TIMES = 'RETRIEVE_ALL_TAKEN_TIMES';
+//   export const RETRIEVE_ALL_TAKEN_TIMES = 'RETRIEVE_ALL_TAKEN_TIMES';
   
   export default function reducer(state, action) {
     switch(action.type){
@@ -18,8 +19,8 @@ export const initialState = {
         return { ...state, takenTimes : action.payload};
       case 'UPDATE_USER_TAKEN_TIMES':
         return { ...state, usersTimes : action.payload};
-    //   case LOGGED_IN:
-    //     return { ...state, ...action.payload};
+      case 'LOGGED_IN_USER':
+          return { ...state, user: action.payload};
       default:
         return state;
     }
