@@ -10,19 +10,32 @@ const Calendar = (props) => {
   const history = useHistory();
   const emitNewTime = useEmitEvent('NEW_TIME');
   const emitRetriveTimes = useEmitEvent('RETRIEVE_TIMES');
-  const [room, setRoom] = useState('')  
+  const [room, setRoom] = useState('')
   const socketState = useSocketState();
   console.log(socketState);
 
+
+  
   useEffect(() => {
     emitRetriveTimes({payload : ''})
     setRoom(localStorage.getItem('room name'));
+    console.log('!')
   }, []);
-  
+
   const times = () => {
     let arrOfTimes = [6,8,10,12,2,4,6,8,10]
     console.log(Date.UTC);
+    let takenTimesInSameRoom = null;
+    if(socketState.takenTimes){
+      takenTimesInSameRoom = socketState.takenTimes.reduce((acc, curr) => {
+        if(curr.roomName[0] === room){
+          acc.push(curr.time)
+        }
+        return acc;
+      }, [])
+    }
     const timeElements = arrOfTimes.map((time) => {
+      if(takenTimesInSameRoom && takenTimesInSameRoom.includes(time)) return;
         return (
         <button className={ButtonStyles.button3} value={time} onClick={() => emitNewTime({
           payload : {
