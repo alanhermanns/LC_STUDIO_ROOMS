@@ -35,7 +35,6 @@ const times = () => {
         <div className={Styles.main}>
             <h2>PRACTICE ROOM SIGNUP</h2>
             {times()}
-            <button className={ButtonStyles.button2} style={{"margin" : "0"}}onClick={handleClick}>SignUp/Login</button>
         </div>
     </>
   );
