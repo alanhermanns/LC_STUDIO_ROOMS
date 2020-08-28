@@ -19,6 +19,11 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       systemvars: true
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public' },
+      ]
     })
   ],
   module: {
