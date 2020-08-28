@@ -9,7 +9,7 @@ import { SocketProvider } from 'react-socket-io-hooks';
 
 export default function App() {
   return (
-    <SocketProvider uri="http://localhost:8080"
+    <SocketProvider uri="https://lc-rooms-be.herokuapp.com/"
     reducer={reducer}
     initialState={{
       takenTimes: [{
