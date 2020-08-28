@@ -25,7 +25,7 @@ const Main = (props) => {
       let userTimes = socketState.user.myTimes;
       return userTimes.map(roomTime => {
         return (
-        <li>
+        <li style={{"font-size" : "16px"}}>
           {`${roomTime.time} of the Clock : Room ${roomTime.roomName[0]}`}
         </li>)
       })
