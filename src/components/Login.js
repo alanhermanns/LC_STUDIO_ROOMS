@@ -33,12 +33,12 @@ const Login = (props) => {
 
   return (
     <>
-        <div className={Styles.primary}>
-            <img src={logo}/>
+        <div className={Styles.primary} style={{"display": "flex", "flex-direction" : "column", "justify-content" : "space-around", "height" : "75vh"}}>
+            <img style={{"z-index": "-1", "top": '14vh'}} src={logo}/>
             <h2>PRACTICE ROOM SIGNUP</h2>
             <input className={ButtonStyles.button2} style={{"margin" : "0"}}onChange={(event) => setEmail(event.target.value)} value={email}>
             </input>
-            <button onClick={handleClick}>LOGIN</button>
+            <button className={ButtonStyles.button3} onClick={handleClick}>LOGIN</button>
         </div>
     </>
   );

@@ -3,10 +3,14 @@ import { useHistory } from 'react-router-dom';
 import ButtonStyles from '../components/Button.css';
 import Styles from '../components/Main.css';
 import map from '../assets/Evans_Lower_Level.jpg';
+import {useSocketState} from 'react-socket-io-hooks';
 
 
 const Main = (props) => {
   const history = useHistory();
+  const socketState = useSocketState();
+  console.log(socketState);
+
   const handleClick = (event) => {
     Promise.resolve(localStorage.setItem('room name', `${event.target.value}` ))
     .then(() => {

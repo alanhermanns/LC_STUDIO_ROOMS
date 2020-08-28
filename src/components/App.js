@@ -20,7 +20,7 @@ export default function App() {
           time: '',
           roomName : ''
       }],
-      user: {}
+      user: ''
     }}>
       <BrowserRouter>
         <Switch>
