@@ -21,7 +21,7 @@ const Login = (props) => {
     const handleClick = () => {
       emit({
         payload : {
-          email : 'dog@lclark.edu',
+          email : email,
           vocalStudent: false,
           theoryStudent: false,
           percussionStudent: false,
@@ -36,8 +36,9 @@ const Login = (props) => {
         <div className={Styles.primary}>
             <img src={logo}/>
             <h2>PRACTICE ROOM SIGNUP</h2>
-            <input className={ButtonStyles.button2} style={{"margin" : "0"}} onClick={handleClick}onChange={(event) => setEmail(event.target.value)} value={email}>
+            <input className={ButtonStyles.button2} style={{"margin" : "0"}}onChange={(event) => setEmail(event.target.value)} value={email}>
             </input>
+            <button onClick={handleClick}>LOGIN</button>
         </div>
     </>
   );
