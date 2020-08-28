@@ -43,6 +43,12 @@ const Calendar = (props) => {
     let arrOfTimes = [6,8,10,12,14,16,18,20,22]
     console.log(Date.UTC);
     let takenTimesInSameRoom = null;
+    let usersTakenTimes;
+    if(socketState.user.myTimes){
+      usersTakenTimes = socketState.user.myTimes.map((time) => {
+        return time.time;
+      })
+    }
     if(socketState.takenTimes){
       takenTimesInSameRoom = socketState.takenTimes.reduce((acc, curr) => {
         if(curr.roomName[0] === room){
@@ -53,6 +59,7 @@ const Calendar = (props) => {
     }
     const timeElements = arrOfTimes.map((time) => {
       if(takenTimesInSameRoom && takenTimesInSameRoom.includes(time)) return;
+      if(usersTakenTimes && usersTakenTimes.includes(time)) return;
         return (
         <button className={ButtonStyles.button3} value={time} onClick={() =>{ 
           setNewTime(event.target.value)
