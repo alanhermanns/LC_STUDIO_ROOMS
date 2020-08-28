@@ -17,13 +17,13 @@ const Calendar = (props) => {
 
   
   useEffect(() => {
-    emitRetriveTimes({payload : ''})
+    emitRetriveTimes({payload : socketState.user.email})
     setRoom(localStorage.getItem('room name'));
     console.log('!')
   }, []);
 
   const times = () => {
-    let arrOfTimes = [6,8,10,12,2,4,6,8,10]
+    let arrOfTimes = [6,8,10,12,14,16,18,20,22]
     console.log(Date.UTC);
     let takenTimesInSameRoom = null;
     if(socketState.takenTimes){

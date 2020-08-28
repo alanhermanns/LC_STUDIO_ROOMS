@@ -7,7 +7,7 @@ export const initialState = {
         time: '',
         roomName : ''
     }],
-    user : '',
+    user : ''
   };
   
   export const UPDATE_ALL_TAKEN_TIMES = 'UPDATE_ALL_TAKEN_TIMES';
