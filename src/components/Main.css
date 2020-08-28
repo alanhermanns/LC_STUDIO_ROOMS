@@ -7,7 +7,7 @@ body{
     width: 100vw;
 }
 img{
-    position: absolute;
+    position : absolute;
     size: 30%;
     z-index: -1;
 }

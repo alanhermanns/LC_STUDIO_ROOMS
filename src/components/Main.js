@@ -4,6 +4,7 @@ import ButtonStyles from '../components/Button.css';
 import Styles from '../components/Main.css';
 import map from '../assets/Evans_Lower_Level.jpg';
 import {useSocketState} from 'react-socket-io-hooks';
+import { ReactWrapper } from 'enzyme';
 
 
 const Main = (props) => {
@@ -18,10 +19,26 @@ const Main = (props) => {
     })
   };
 
+  const userRoomTimes = () => {
+    if(!socketState.user.myTimes) return
+    else {
+      let userTimes = socketState.user.myTimes;
+      return userTimes.map(roomTime => {
+        return (
+        <li>
+          {`${roomTime.time} of the Clock : Room ${roomTime.roomName[0]}`}
+        </li>)
+      })
+    } 
+  }
+
   return (
     <>
         <div className={Styles.main}>
             <h2>PRACTICE ROOM SIGNUP</h2>
+            <img src={map}></img>
+            <h4>My Times</h4>
+            {userRoomTimes()}
             <div className={Styles.electricPianoStudios}>
             <button className={ButtonStyles.button2} value={'01N'} onClick={handleClick}>01N</button>
             <button className={ButtonStyles.button2} value={'010'} onClick={handleClick}>010</button>
@@ -48,7 +65,6 @@ const Main = (props) => {
             <button className={ButtonStyles.button2} onClick={handleClick} value={'O29'}>029</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'028'}>028</button>
             </div>
-            <img src={map}></img>
         </div>
     </>
   );
