@@ -3,13 +3,14 @@ import { useHistory } from 'react-router-dom';
 import ButtonStyles from '../components/Button.css';
 import Styles from '../components/Main.css';
 import map from '../assets/Evans_Lower_Level.jpg';
-import {useSocketState} from 'react-socket-io-hooks';
+import {useSocketState, useEmitEvent} from 'react-socket-io-hooks';
 import { ReactWrapper } from 'enzyme';
 
 
 const Main = (props) => {
   const history = useHistory();
   const socketState = useSocketState();
+  const emit = useEmitEvent('DELETE_TIME');
   console.log(socketState);
 
   const handleClick = (event) => {
@@ -19,15 +20,30 @@ const Main = (props) => {
     })
   };
 
+  const handleDelete = (email , time, roomName) => {
+    emit({
+      payload : {
+        email : email,
+        time: time,
+        roomName : roomName
+      }
+    })
+  }
+
   const userRoomTimes = () => {
     if(!socketState.user.myTimes) return
     else {
+      let user = socketState.user;
       let userTimes = socketState.user.myTimes;
       return userTimes.map(roomTime => {
         return (
+          <>
         <li style={{"font-size" : "16px"}}>
           {`${roomTime.time} of the Clock : Room ${roomTime.roomName[0]}`}
-        </li>)
+        </li>
+        <h6 onClick={() => handleDelete(user.email, roomTime.time, roomTime.roomName)}>Delete</h6>
+        </>
+        )
       })
     } 
   }
