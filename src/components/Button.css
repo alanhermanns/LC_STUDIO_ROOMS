@@ -89,11 +89,6 @@
     background-image: -o-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
     background-image: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
     
-    -webkit-transition: background-color .2s ease-out;
-    -moz-transition: background-color .2s ease-out;
-    -ms-transition: background-color .2s ease-out;
-    -o-transition: background-color .2s ease-out;
-    transition: background-color .2s ease-out;
     background-clip: padding-box; /* Fix bleeding */
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -102,26 +97,6 @@
     -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
     box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
     text-shadow: 0 1px 0 rgba(85 , 85 , 85, .9);
-    
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  .button2[disabled], .button2[disabled]:hover, .button2[disabled]:active{
-    border-color: #eaeaea;
-    background: #fafafa;
-    cursor: default;
-    position: static;
-    color: #999;
-    /* Usually, !important should be avoided but here it's really needed :) */
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
   }
 
 
