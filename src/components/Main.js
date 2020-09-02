@@ -62,8 +62,18 @@ const Main = (props) => {
     } 
   }
 
+  const ifTheoryStudent = () => {
+    if(!socketState.user.theoryStudent) return
+    else {
+      return (
+      <>
+      <button className={ButtonStyles.button2} style={{"margin-right" : "50px"}} value={'N'} onClick={handleClick}>N</button>
+      </>)
+    }
+  }
+
   const ifPianoStudent = () => {
-    if(! socketState.user.pianoStudent) return
+    if(!socketState.user.pianoStudent) return
     else {
       return (
       <>
@@ -81,7 +91,7 @@ const Main = (props) => {
             <h4>My Times</h4>
             {userRoomTimes()}
             <div className={Styles.electricPianoStudios}>
-            <button className={ButtonStyles.button2} value={'N'} onClick={handleClick}>N</button>
+            {ifTheoryStudent()}
             <button className={ButtonStyles.button2} value={'O'} onClick={handleClick}>O</button>
             </div>
             <div className={Styles.southBlock}>
