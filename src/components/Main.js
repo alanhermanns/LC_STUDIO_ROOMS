@@ -63,14 +63,14 @@ const Main = (props) => {
   }
 
   const ifPianoStudent = () => {
-    // if(!socketState.user.pianoStudent) return
-    // else {
+    if(! socketState.user.pianoStudent) return
+    else {
       return (
       <>
       <button className={ButtonStyles.button2} onClick={handleClick} value={'O12'}>012</button>
       <button className={ButtonStyles.button2} onClick={handleClick} value={'O14'}>014</button>
       </>)
-    // }
+    }
   }
 
   return (

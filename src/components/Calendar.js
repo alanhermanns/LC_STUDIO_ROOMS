@@ -40,8 +40,14 @@ const Calendar = (props) => {
     }
 
   const times = () => {
-    let arrOfTimes = [6,8,10,12,14,16,18,20,22]
-    console.log(Date.UTC);
+    let arrOfTimes;
+    if(room === 'O1A' || room === 'O1C' || room === '01E' || room === '01H' || room === '01K' || room === '01M' || room === '01O' || room === '029'){
+    arrOfTimes = [6,8,10,12,14,16,18,20,22]
+    }
+    else if(room === 'O12' || room === 'O14'){
+      arrOfTimes = ['20']
+    }
+    else arrOfTimes = [7, 9, 11, 13, 15, 17, 19, 21]
     let takenTimesInSameRoom = null;
     let usersTakenTimes;
     if(socketState.user.myTimes){
