@@ -49,3 +49,13 @@ img{
     left: 505px;
     top: 735px;
 }
+.pianoStudios{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 450px;
+    height: 50px;
+    left: 750px;
+    top: 175px;
+}

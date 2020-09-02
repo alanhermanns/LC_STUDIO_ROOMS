@@ -4,7 +4,6 @@ import ButtonStyles from '../components/Button.css';
 import Styles from '../components/Main.css';
 import map from '../assets/Evans_Lower_Level.jpg';
 import {useSocketState, useEmitEvent} from 'react-socket-io-hooks';
-import { ReactWrapper } from 'enzyme';
 
 
 const Main = (props) => {
@@ -33,19 +32,45 @@ const Main = (props) => {
   const userRoomTimes = () => {
     if(!socketState.user.myTimes) return
     else {
+      const b = new Date(Date.now());
+      let h = b.getHours();
       let user = socketState.user;
       let userTimes = socketState.user.myTimes;
+
       return userTimes.map(roomTime => {
-        return (
-          <>
-        <li style={{"font-size" : "16px"}}>
-          {`${roomTime.time} of the Clock : Room ${roomTime.roomName[0]}`}
-        </li>
-        <h6 onClick={() => handleDelete(user.email, roomTime.time, roomTime.roomName)}>Delete</h6>
-        </>
-        )
-      })
+        console.log(roomTime)
+        if(h > roomTime.time || h === roomTime.time){
+          return (
+            <>
+          <li style={{"font-size" : "16px"}}>
+            {`${roomTime.time} of the Clock : Room ${roomTime.roomName[0]}`}
+          </li>
+            </>
+            )
+        }
+        else {
+          return (
+            <>
+            <li style={{"font-size" : "16px"}}>
+            {`${roomTime.time} of the Clock : Room ${roomTime.roomName[0]}`}
+            </li>
+            <h6 onClick={() => handleDelete(user.email, roomTime.time, roomTime.roomName)}>Delete</h6>
+            </>
+            )
+          }
+        })
     } 
+  }
+
+  const ifPianoStudent = () => {
+    // if(!socketState.user.pianoStudent) return
+    // else {
+      return (
+      <>
+      <button className={ButtonStyles.button2} onClick={handleClick} value={'O12'}>012</button>
+      <button className={ButtonStyles.button2} onClick={handleClick} value={'O14'}>014</button>
+      </>)
+    // }
   }
 
   return (
@@ -57,7 +82,7 @@ const Main = (props) => {
             {userRoomTimes()}
             <div className={Styles.electricPianoStudios}>
             <button className={ButtonStyles.button2} value={'01N'} onClick={handleClick}>01N</button>
-            <button className={ButtonStyles.button2} value={'010'} onClick={handleClick}>010</button>
+            <button className={ButtonStyles.button2} value={'010'} onClick={handleClick}>01O</button>
             </div>
             <div className={Styles.southBlock}>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'01M'}>01M</button>
@@ -75,13 +100,17 @@ const Main = (props) => {
             <button className={ButtonStyles.button2} onClick={handleClick} value={'O1F'}>01F</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'O1C'}>01C</button>
             </div>
-            <div className={Styles.groupStudios}>
 
+            <div className={Styles.groupStudios}>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'O30'}>030</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'O29'}>029</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'028'}>028</button>
             </div>
-        </div>
+            <div className={Styles.pianoStudios}>
+
+            {ifPianoStudent()}
+            </div>
+      </div>
     </>
   );
 };
