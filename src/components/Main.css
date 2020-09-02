@@ -16,7 +16,7 @@ img{
     display: flex;
     justify-content: space-between;
     width: 290px;
-    left: -10px;
+    left: -5px;
     top: 625px;
 }
 .southBlock{
@@ -24,9 +24,9 @@ img{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 250px;
+    width: 325px;
     height: 230px;
-    left: 5px;
+    left: -5px;
     top: 675px;
 }
 .northBlock{
@@ -34,9 +34,9 @@ img{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 250px;
+    width: 325px;
     height: 230px;
-    left: 215px;
+    left: 205px;
     top: 675px;
 }
 .groupStudios{
@@ -44,10 +44,10 @@ img{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 200px;
+    width: 210px;
     height: 50px;
     left: 505px;
-    top: 735px;
+    top: 730px;
 }
 .pianoStudios{
     position: absolute;

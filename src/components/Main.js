@@ -67,8 +67,8 @@ const Main = (props) => {
     else {
       return (
       <>
-      <button className={ButtonStyles.button2} onClick={handleClick} value={'O12'}>012</button>
-      <button className={ButtonStyles.button2} onClick={handleClick} value={'O14'}>014</button>
+      <button className={ButtonStyles.button2} onClick={handleClick} value={'12'}>12</button>
+      <button className={ButtonStyles.button2} onClick={handleClick} value={'14'}>14</button>
       </>)
     }
   }
@@ -81,30 +81,30 @@ const Main = (props) => {
             <h4>My Times</h4>
             {userRoomTimes()}
             <div className={Styles.electricPianoStudios}>
-            <button className={ButtonStyles.button2} value={'01N'} onClick={handleClick}>01N</button>
-            <button className={ButtonStyles.button2} value={'010'} onClick={handleClick}>01O</button>
+            <button className={ButtonStyles.button2} value={'N'} onClick={handleClick}>N</button>
+            <button className={ButtonStyles.button2} value={'O'} onClick={handleClick}>O</button>
             </div>
             <div className={Styles.southBlock}>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'01M'}>01M</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1G'}>O1G</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1L'}>01L</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1H'}>01H</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1K'}>01K</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1J'}>01J</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'M'}>M</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'G'}>G</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'L'}>L</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'H'}>H</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'K'}>K</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'J'}>J</button>
             </div>
             <div className={Styles.northBlock}> 
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1D'}>01D</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1A'}>01A</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1E'}>01E</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1B'}>01B</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1F'}>01F</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O1C'}>01C</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'D'}>D</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'A'}>A</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'E'}>E</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'B'}>B</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'F'}>F</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'C'}>C</button>
             </div>
 
             <div className={Styles.groupStudios}>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O30'}>030</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'O29'}>029</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'028'}>028</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'30'}>30</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'29'}>29</button>
+            <button className={ButtonStyles.button2} onClick={handleClick} value={'28'}>28</button>
             </div>
             <div className={Styles.pianoStudios}>
 
