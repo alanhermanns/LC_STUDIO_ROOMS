@@ -110,8 +110,7 @@ const Main = (props) => {
             <div className={Styles.southBlock}>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'M'}>M</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'G'}>G</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'L'}>L</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'H'}>H</button>
+            <button className={ButtonStyles.button2} style={{"margin-left" : "200px"}} onClick={handleClick} value={'H'}>H</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'K'}>K</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'J'}>J</button>
             </div>
