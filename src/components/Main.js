@@ -73,13 +73,26 @@ const Main = (props) => {
   }
 
   const ifPianoStudent = () => {
-    if(!socketState.user.pianoStudent) return
+    if(!socketState.user.flaggedPianoStudent) return
     else {
       return (
       <>
       <button className={ButtonStyles.button2} onClick={handleClick} value={'12'}>12</button>
       <button className={ButtonStyles.button2} onClick={handleClick} value={'14'}>14</button>
       </>)
+    }
+  }
+
+  const ifUnderclassPianoStudent = () => {
+    if(!socketState.user.pianoStudent) return
+    else {
+      return (
+        <>
+        <button className={ButtonStyles.button2} onClick={handleClick} value={'30'}>30</button>
+        <button className={ButtonStyles.button2} onClick={handleClick} value={'29'}>29</button>
+        <button className={ButtonStyles.button2} onClick={handleClick} value={'28'}>28</button>
+        </>
+        )
     }
   }
 
@@ -112,12 +125,10 @@ const Main = (props) => {
             </div>
 
             <div className={Styles.groupStudios}>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'30'}>30</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'29'}>29</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'28'}>28</button>
+            {ifUnderclassPianoStudent()}
             </div>
-            <div className={Styles.pianoStudios}>
 
+            <div className={Styles.pianoStudios}>
             {ifPianoStudent()}
             </div>
       </div>
