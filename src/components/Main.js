@@ -96,6 +96,49 @@ const Main = (props) => {
     }
   }
 
+  const ifPercussionStudentM = () => {
+    if(!socketState.user.percussionStudent) return
+    else {
+      return (
+    <button className={ButtonStyles.button2} onClick={handleClick} value={'M'}>M</button>
+    )
+  }
+}
+const ifPercussionStudentH = () => {
+  if(!socketState.user.percussionStudent) return
+  else {
+    return (
+      <button className={ButtonStyles.button2} style={{"margin-left" : "200px"}} onClick={handleClick} value={'H'}>H</button>
+    )
+  }
+}
+
+const southBlock = () => {
+  if(!socketState.user.percussionStudent) {
+    return (
+      <div className={Styles.southBlock}>
+      {ifPercussionStudentM()}
+      <button className={ButtonStyles.button2} onClick={handleClick} value={'K'}>K</button>
+      {ifPercussionStudentH()}
+      <button className={ButtonStyles.button2} onClick={handleClick} value={'J'}>J</button>
+      <button className={ButtonStyles.button2} onClick={handleClick} value={'G'}>G</button>
+      </div>
+    )
+  } 
+  else {
+    return (
+    <div className={Styles.southBlock2}>
+    {ifPercussionStudentM()}
+    <button className={ButtonStyles.button2} onClick={handleClick} value={'G'}>G</button>
+    {ifPercussionStudentH()}
+    <button className={ButtonStyles.button2} onClick={handleClick} value={'K'}>K</button>
+    <button className={ButtonStyles.button2} onClick={handleClick} value={'J'}>J</button>
+    </div>
+    )
+  }
+}
+
+
   return (
     <>
         <div className={Styles.main}>
@@ -107,13 +150,7 @@ const Main = (props) => {
             {ifTheoryStudent()}
             <button className={ButtonStyles.button2} value={'O'} onClick={handleClick}>O</button>
             </div>
-            <div className={Styles.southBlock}>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'M'}>M</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'G'}>G</button>
-            <button className={ButtonStyles.button2} style={{"margin-left" : "200px"}} onClick={handleClick} value={'H'}>H</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'K'}>K</button>
-            <button className={ButtonStyles.button2} onClick={handleClick} value={'J'}>J</button>
-            </div>
+            {southBlock()}
             <div className={Styles.northBlock}> 
             <button className={ButtonStyles.button2} onClick={handleClick} value={'D'}>D</button>
             <button className={ButtonStyles.button2} onClick={handleClick} value={'A'}>A</button>

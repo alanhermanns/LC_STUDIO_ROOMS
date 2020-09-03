@@ -23,6 +23,17 @@ img{
     position: absolute;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap-reverse;
+    width: 350px;
+    height: 310px;
+    left: -100px;
+    top: 635px;
+}
+.southBlock2{
+    position: absolute;
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
     width: 325px;
     height: 230px;
