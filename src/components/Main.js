@@ -42,7 +42,7 @@ const Main = (props) => {
         if(h > roomTime.time || h === roomTime.time){
           return (
             <>
-          <li style={{"font-size" : "16px"}}>
+          <li style={{"font-size" : "16px", "margin-bottom" : '24px'}}>
             {`${roomTime.time} of the Clock : Room ${roomTime.roomName[0]}`}
           </li>
             </>
