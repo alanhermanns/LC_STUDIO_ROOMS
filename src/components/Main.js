@@ -118,10 +118,10 @@ const southBlock = () => {
     return (
       <div className={Styles.southBlock}>
       {ifPercussionStudentM()}
-      <button className={ButtonStyles.button2} onClick={handleClick} value={'K'}>K</button>
+      <button className={ButtonStyles.button2} style={{"z-index" : "2"}} onClick={handleClick} value={'K'}>K</button>
       {ifPercussionStudentH()}
-      <button className={ButtonStyles.button2} onClick={handleClick} value={'J'}>J</button>
-      <button className={ButtonStyles.button2} onClick={handleClick} value={'G'}>G</button>
+      <button className={ButtonStyles.button2} style={{"z-index" : "2"}} onClick={handleClick} value={'J'}>J</button>
+      <button className={ButtonStyles.button2} style={{"z-index" : "2"}} onClick={handleClick} value={'G'}>G</button>
       </div>
     )
   } 
