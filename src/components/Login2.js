@@ -4,6 +4,7 @@ import logo from '../assets/logo_1.jpg'
 // import { loginWithProvider } from '../firebase/firebase';
 import ButtonStyles from '../components/Button.css';
 import Styles from './Login.css';
+import Styles2 from './Login2.css'
 import {useEmitEvent, useSocketState} from 'react-socket-io-hooks';
 import bcrypt from 'bcryptjs'
 
@@ -32,7 +33,7 @@ const Login2 = (props) => {
         if(socketState.bookings){
             const bookingsElements = socketState.bookings.reduce((acc, curr) => {
                 console.log(curr)
-                let room = curr[0].roomName;
+                let room = curr[0].roomeName;
                 console.log(room)
                 acc[room].push({email : curr[0].email, time: curr[0].time})
                 return acc;
@@ -51,8 +52,28 @@ const Login2 = (props) => {
             29: [],
             28: [] 
             })
-            console.log(bookingsElements)
-            return bookingsElements;
+            let bookingsElementsArray = Object.entries(bookingsElements)
+            let elements = bookingsElementsArray.map(booking => {
+                console.log(booking)
+                console.log(booking[1])
+                return(
+                <div className={Styles2.room}>
+                <h2>{booking[0]}</h2>
+                <ul>
+                    {booking[1].map(person => {
+                            return(
+                                <>
+                                <h3>{person.email}</h3>
+                                <h3>Time : {person.time}</h3>
+                                </>
+                            )
+                        })
+                    }
+                </ul>
+                </div>
+                )
+            })
+            return elements
         }
         else return
     }
@@ -71,9 +92,10 @@ const Login2 = (props) => {
   );
 }
 else return (
-    <>
+    <div>
+    <h1>ROOMS, BOOKINGS LIST</h1>
     {displayBookings()}
-    </>
+    </div>
 )
   }
 
