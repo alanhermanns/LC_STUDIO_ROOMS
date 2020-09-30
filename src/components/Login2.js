@@ -38,8 +38,10 @@ const Login2 = (props) => {
                 acc[room].push({email : curr[0].email, time: curr[0].time})
                 return acc;
             },{
+            N: [],
             K: [],
             G: [],
+            H: [],
             J: [],
             O: [],
             D: [],
@@ -56,12 +58,15 @@ const Login2 = (props) => {
             let elements = bookingsElementsArray.map(booking => {
                 console.log(booking)
                 console.log(booking[1])
-                return(
+                if(!booking[1][0]){
+                    return
+                } 
+                else return(
                 <div className={Styles2.room}>
                 <h2>{booking[0]}</h2>
                 <ul>
                     {booking[1].map(person => {
-                            return(
+                        return(
                                 <>
                                 <h3>{person.email}</h3>
                                 <h3>Time : {person.time}</h3>
@@ -92,10 +97,12 @@ const Login2 = (props) => {
   );
 }
 else return (
-    <div>
+    <>
     <h1>ROOMS, BOOKINGS LIST</h1>
+    <div className={Styles2.rooms}>
     {displayBookings()}
     </div>
+    </>
 )
   }
 
