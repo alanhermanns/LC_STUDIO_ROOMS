@@ -32,13 +32,13 @@ const Login2 = (props) => {
     const displayBookings = () => {
         if(socketState.bookings){
             const bookingsElements = socketState.bookings.reduce((acc, curr) => {
-                console.log(curr)
                 let room = curr[0].roomeName;
                 console.log(room)
                 acc[room].push({email : curr[0].email, time: curr[0].time})
                 return acc;
             },{
             N: [],
+            M: [],
             K: [],
             G: [],
             H: [],
