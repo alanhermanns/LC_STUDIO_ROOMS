@@ -148,7 +148,7 @@ const southBlock = () => {
             {userRoomTimes()}
             <div className={Styles.electricPianoStudios}>
             {ifTheoryStudent()}
-            <button className={ButtonStyles.button2} value={'O'} onClick={handleClick}>O</button>
+            <button className={ButtonStyles.button2} value={'O'}>O Coming Back Soon</button>
             </div>
             {southBlock()}
             <div className={Styles.northBlock}> 
