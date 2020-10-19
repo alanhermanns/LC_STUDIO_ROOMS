@@ -10,8 +10,7 @@ import Login2 from './Login2';
 
 export default function App() {
   return (
-    <SocketProvider uri="//localhost:7890"
-    // uri="https://lc-rooms-be.herokuapp.com/"
+    <SocketProvider uri="https://lc-rooms-be.herokuapp.com/"
     reducer={reducer}
     initialState={{
       takenTimes: [{
