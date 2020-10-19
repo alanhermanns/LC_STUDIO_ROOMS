@@ -14,9 +14,12 @@ const Login = (props) => {
   const [email, setEmail]=useState('@lclark.edu');
   const emit = useEmitEvent('LOGIN_USER');
   const socketState = useSocketState();
-  //   useEffect(() => {
-    //     if(user) history.replace('/main');
-    //   }, [user]);
+    
+  useEffect(() => {
+        if(socketState.error){
+          location.reload()
+        }
+      }, []);
     
     const handleClick = () => {
       emit({

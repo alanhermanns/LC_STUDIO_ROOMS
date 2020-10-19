@@ -8,7 +8,8 @@ export const initialState = {
         roomName : ''
     }],
     user : '',
-    bookings: []
+    bookings: [],
+    error: null
   };
   
   export const UPDATE_ALL_TAKEN_TIMES = 'UPDATE_ALL_TAKEN_TIMES';
@@ -24,6 +25,9 @@ export const initialState = {
           return { ...state, user: action.payload};
       case 'UPDATE_TODAY_USERTIMES_ADMIN':
           return {...state, bookings: action.payload}
+      case 'ERROR':
+          return {...state, error: action.payload}
+          //yet to be implemented
       default:
         return state;
     }

@@ -30,7 +30,15 @@ const Main = (props) => {
   }
 
   const userRoomTimes = () => {
-    if(!socketState.user.myTimes) return
+    if(socketState.error){
+      return (
+      <h1>{`Please, return to the previous page, if you will, & double check your email : that ${socketState.error}`}</h1>
+      )
+    }
+    if(!socketState.user.myTimes){
+    console.log('USER sans times')
+    return
+    }
     else {
       const b = new Date(Date.now());
       let h = b.getHours();
@@ -146,7 +154,7 @@ const southBlock = () => {
   }
 }
 
-
+  if(!socketState.error){
   return (
     <>
         <div className={Styles.main}>
@@ -183,6 +191,19 @@ const southBlock = () => {
       </div>
     </>
   );
-};
+}
+else {
+  return (
+    <>
+    <div className={Styles.main}>
+            <h2>PRACTICE ROOM SIGNUP</h2>
+            <img src={map}></img>
+            <h4>My Times</h4>
+            {userRoomTimes()}
+    </div>
+    </>
+  )
+}
+}
 
 export default Main;
