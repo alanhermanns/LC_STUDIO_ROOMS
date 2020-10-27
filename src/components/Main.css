@@ -70,3 +70,12 @@ img{
     left: 750px;
     top: 175px;
 }
+.drumUpstairs{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    height: 150px;
+    left: 500px;
+    top: 575px;
+}

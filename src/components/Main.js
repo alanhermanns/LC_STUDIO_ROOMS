@@ -124,7 +124,7 @@ const ifPercussionStudent122B = () => {
   if(!socketState.user.percussionStudent) return
   else {
     return (
-      <button className={ButtonStyles.button2} style={{"margin-left" : "-200px", "margin-top" : "800px", "padding" : "45px", "box-shadow" : "3px 3px 5px 6px"}} onClick={handleClick} value={'122B'}>122B</button>
+      <button className={ButtonStyles.button2} style={{"padding" : "55px"}} onClick={handleClick} value={'122B'}>122B</button>
     )
   }
 }
@@ -184,7 +184,7 @@ const southBlock = () => {
             {ifPianoStudent()}
             </div>
 
-            <div className={Styles.pianoStudios}>
+            <div className={Styles.drumUpstairs}>
             {ifPercussionStudent122B()}
             </div>
             
