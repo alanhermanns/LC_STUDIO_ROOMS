@@ -45,7 +45,7 @@ const Calendar = (props) => {
     arrOfTimes = [6,8,10,12,14,16,18,20,22]
     }
     else if(room === '12' || room === '14'){
-      arrOfTimes = ['17-19','20-23']
+      arrOfTimes = [17, 20]
     }
     else arrOfTimes = [7, 9, 11, 13, 15, 17, 19, 21]
     let takenTimesInSameRoom = null;
