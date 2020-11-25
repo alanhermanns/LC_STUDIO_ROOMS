@@ -164,7 +164,7 @@ const southBlock = () => {
             {userRoomTimes()}
             <div className={Styles.electricPianoStudios}>
             {ifTheoryStudent()}
-            <button className={ButtonStyles.button2} value={'O'}>O Coming Back Soon</button>
+            <button className={ButtonStyles.button2} value={'O'}>O</button>
             </div>
             {southBlock()}
             <div className={Styles.northBlock}> 
