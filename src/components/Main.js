@@ -71,13 +71,10 @@ const Main = (props) => {
   }
 
   const ifTheoryStudent = () => {
-    if(!socketState.user.theoryStudent) return
-    else {
       return (
       <>
       <button className={ButtonStyles.button2} style={{"margin-right" : "50px"}} value={'N'} onClick={handleClick}>N</button>
       </>)
-    }
   }
 
   const ifPianoStudent = () => {
